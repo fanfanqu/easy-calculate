@@ -1,0 +1,22 @@
+function calculate_median(arr) {
+var array;
+if(arr.length%2==0){
+	array=new Array(arr.length/2);
+	}else{
+		array=new Array(arr.length/2-0.5);
+		} 
+var j = 0;
+for(var i=1;i<arr.length;i+=2){
+	array[j++]=arr[i];}
+var a = array;
+a.sort(compare);
+if(a.length%2==0){
+	return (a[a.length/2]+a[a.length/2-1])/2;
+}else{
+	return a[a.length/2-0.5];
+	}
+}
+function compare(a,b){
+	return b-a;}	
+module.exports = calculate_median;
+
